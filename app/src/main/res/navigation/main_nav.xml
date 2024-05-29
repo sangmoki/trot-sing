@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/firstSingerFragment">
+
+    <fragment
+        android:id="@+id/firstSingerFragment"
+        android:name="com.sangmoki.trotsing.FirstSingerFragment"
+        android:label="fragment_first_singer"
+        tools:layout="@layout/fragment_first_singer" >
+        <action
+            android:id="@+id/action_firstSingerFragment_to_thirdSingerFragment"
+            app:destination="@id/thirdSingerFragment" />
+        <action
+            android:id="@+id/action_firstSingerFragment_to_secondSingerFragment"
+            app:destination="@id/secondSingerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondSingerFragment"
+        android:name="com.sangmoki.trotsing.SecondSingerFragment"
+        android:label="fragment_second_singer"
+        tools:layout="@layout/fragment_second_singer" >
+        <action
+            android:id="@+id/action_secondSingerFragment_to_thirdSingerFragment"
+            app:destination="@id/thirdSingerFragment" />
+        <action
+            android:id="@+id/action_secondSingerFragment_to_firstSingerFragment"
+            app:destination="@id/firstSingerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdSingerFragment"
+        android:name="com.sangmoki.trotsing.ThirdSingerFragment"
+        android:label="fragment_third_singer"
+        tools:layout="@layout/fragment_third_singer" >
+        <action
+            android:id="@+id/action_thirdSingerFragment_to_secondSingerFragment"
+            app:destination="@id/secondSingerFragment" />
+        <action
+            android:id="@+id/action_thirdSingerFragment_to_firstSingerFragment"
+            app:destination="@id/firstSingerFragment" />
+    </fragment>
+</navigation>

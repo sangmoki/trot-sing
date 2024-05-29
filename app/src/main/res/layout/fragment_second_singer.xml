@@ -10,13 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="임영웅 노래 리스트"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:background="#308CD5"
         android:layout_margin="10dp"
         android:gravity="center"
         android:textSize="30sp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/singRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"

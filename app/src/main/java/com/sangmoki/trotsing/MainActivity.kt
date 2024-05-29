@@ -18,8 +18,10 @@ class MainActivity : AppCompatActivity() {
         }
         
         // 1. navigation 만들기
-        
+
         // 2. 생성한 navigation에 Fragment 만들고 연결하기
+
+            // 2-1. Fragment 이미지 클릭 이벤트 생성
         
         // 3. 리사이클러뷰 만들기
     }

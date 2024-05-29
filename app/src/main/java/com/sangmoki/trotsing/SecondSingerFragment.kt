@@ -5,55 +5,43 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.navigation.findNavController
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SecondSingerFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SecondSingerFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second_singer, container, false)
-    }
+        // inflater를 통해 view를 생성하고, fragment_first_singer를 container에 붙여준다.
+        val view = inflater.inflate(R.layout.fragment_second_singer, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SecondSingerFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SecondSingerFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        // view를 통해 fragment_first_singer에 있는 ImageView를 찾아서 img1, img2, img3에 할당한다.
+        val img1 = view.findViewById<ImageView>(R.id.img1)
+        val img2 = view.findViewById<ImageView>(R.id.img2)
+        val img3 = view.findViewById<ImageView>(R.id.img3)
+
+        // img1 클릭 이벤트
+        img1.setOnClickListener {
+            img1.findNavController()
+                .navigate(R.id.action_secondSingerFragment_to_firstSingerFragment)
+        }
+
+        // img2 클릭 이벤트
+        img2.setOnClickListener {
+        }
+
+        // img3 클릭 이벤트
+        img3.setOnClickListener {
+            img3.findNavController()
+                .navigate(R.id.action_secondSingerFragment_to_thirdSingerFragment)
+        }
+
+        return view
     }
 }
